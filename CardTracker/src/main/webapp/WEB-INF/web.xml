@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>CardTracker</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+   <!-- PARAMETRI GLOBALI DB -->
+  <context-param>
+      <param-name>db.ip</param-name>
+      <param-value>127.0.0.1</param-value>
+  </context-param>
+
+  <context-param>
+      <param-name>db.port</param-name>
+      <param-value>3306</param-value>
+  </context-param>
+
+  <context-param>
+      <param-name>db.name</param-name>
+      <param-value>CardTracker</param-value>
+  </context-param>
+
+  <context-param>
+      <param-name>db.user</param-name>
+      <param-value>vitto</param-value>
+  </context-param>
+
+  <context-param>
+      <param-name>db.password</param-name>
+      <param-value>vitto</param-value>
+  </context-param>
+  
+  <!-- Servlet -->
+   <servlet>
+      <servlet-name>LoginServlet</servlet-name>
+      <servlet-class>it.uniroma2.pjdm.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>LoginServlet</servlet-name>
+      <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>RegisterServlet</servlet-name>
+      <servlet-class>it.uniroma2.pjdm.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>RegisterServlet</servlet-name>
+      <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>CommentServlet</servlet-name>
+      <servlet-class>it.uniroma2.pjdm.servlet.CommentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>CommentServlet</servlet-name>
+      <url-pattern>/comment/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>CardServlet</servlet-name>
+      <servlet-class>it.uniroma2.pjdm.servlet.CardServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>CardServlet</servlet-name>
+      <url-pattern>/card/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>DeckServlet</servlet-name>
+      <servlet-class>it.uniroma2.pjdm.servlet.DeckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>DeckServlet</servlet-name>
+      <url-pattern>/deck/*</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
