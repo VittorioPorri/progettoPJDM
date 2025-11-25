@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="it.uniroma2.cardtracker.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_deckFragment"
+            app:destination="@id/deckFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myDeckFragment"
+            app:destination="@id/myDeckFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deckFragment"
+        android:name="it.uniroma2.cardtracker.deck.DeckFragment"
+        android:label="fragment_deck"
+        tools:layout="@layout/fragment_deck" >
+        <action
+            android:id="@+id/action_deckFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_deckFragment_to_commentFragment"
+            app:destination="@id/commentFragment" />
+        <action
+            android:id="@+id/action_deckFragment_to_addCardFragment"
+            app:destination="@id/addCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myDeckFragment"
+        android:name="it.uniroma2.cardtracker.mydeck.MyDeckFragment"
+        android:label="fragment_my_deck"
+        tools:layout="@layout/fragment_my_deck" >
+        <action
+            android:id="@+id/action_myDeckFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_myDeckFragment_to_deckFragment2"
+            app:destination="@id/deckFragment" />
+        <action
+            android:id="@+id/action_myDeckFragment_to_makeDeckFragment"
+            app:destination="@id/makeDeckFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="it.uniroma2.cardtracker.comment.CommentFragment"
+        android:label="fragment_comment"
+        tools:layout="@layout/fragment_comment" >
+        <action
+            android:id="@+id/action_commentFragment_to_deckFragment"
+            app:destination="@id/deckFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/makeDeckFragment"
+        android:name="it.uniroma2.cardtracker.mydeck.MakeDeckFragment"
+        android:label="fragment_make_deck"
+        tools:layout="@layout/fragment_make_deck" >
+        <action
+            android:id="@+id/action_makeDeckFragment_to_deckFragment"
+            app:destination="@id/deckFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCardFragment"
+        android:name="it.uniroma2.cardtracker.card.AddCardFragment"
+        android:label="fragment_add_card"
+        tools:layout="@layout/fragment_add_card" />
+</navigation>
